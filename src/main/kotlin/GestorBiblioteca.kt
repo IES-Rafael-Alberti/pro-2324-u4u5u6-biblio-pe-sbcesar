@@ -43,6 +43,8 @@ class GestorBiblioteca {
         if (catalogo.contains(libro) && libro.estado == Estado.DISPONIBLE) {
             libro.estado = Estado.PRESTADO
             registroPrestamo.addLast("El libro ${libro.titulo} ha sido prestado.")
+        } else {
+            println("El libro no está en el catálogo o no está disponible.")
         }
     }
 
@@ -55,6 +57,8 @@ class GestorBiblioteca {
         if (catalogo.contains(libro) && libro.estado == Estado.PRESTADO) {
             libro.estado = Estado.DISPONIBLE
             registroPrestamo.addLast("El libro ${libro.titulo} ha sido devuelto.")
+        } else {
+            println("El libro es falso")
         }
     }
 
@@ -62,16 +66,11 @@ class GestorBiblioteca {
      * Consulta si el libro está disponible o no.
      *
      * @param libro Libro : El libro que deseas ver su disponibilidad
-     * @return Boolean : Devuelve true si está desponible o false si no lo está
      */
-    fun consultarDisponibilidad(libro: Libro): Boolean {
-        var disponible = false
-
+    fun consultarDisponibilidad(libro: Libro) {
         if (libro in catalogo) {
-            disponible = true
+            println("El estado del libro ${libro.titulo} es ${libro.estado.name}")
         }
-
-        return disponible
     }
 
     /**

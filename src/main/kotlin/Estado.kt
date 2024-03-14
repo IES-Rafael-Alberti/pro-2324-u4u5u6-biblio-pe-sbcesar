@@ -1,6 +1,6 @@
 package org.pebiblioteca
 
-enum class Estado {
-    DISPONIBLE,
-    PRESTADO
+enum class Estado(descripcion: String) {
+    DISPONIBLE("Disponible"),
+    PRESTADO("Prestado")
 }
