@@ -4,4 +4,5 @@ class GestorElemento<T> {
     fun agregarElemento() {
 
     }
+
 }
